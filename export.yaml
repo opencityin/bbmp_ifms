@@ -1,0 +1,15 @@
+common:
+  database: "sqlite:///./ifms.sqlite"
+  prefix: export/
+  format: csv
+
+exports:
+
+
+  - query: "select * from bills where wo_date >= '2010-04-01'and wo_date <= '2015-03-31' "
+    filename: "export/bengaluru-bbmp-ifmsbills-fy2010to2015/bengaluru-bbmp-ifmsbills-ward-{{ward}}-fy2010to2015.csv"
+    format: csv
+
+  - query: "select * from bills where wo_date >= '2015-04-01'and wo_date <= '2018-03-31' "
+    filename: "export/bengaluru-bbmp-ifmsbills-fy2015to2018/bengaluru-bbmp-ifmsbills-ward-{{ward}}-fy2015to2018.csv"
+    format: csv
